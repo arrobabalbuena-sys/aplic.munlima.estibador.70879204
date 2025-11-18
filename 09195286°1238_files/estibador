@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)https://aplicativos.munlima.gob.pe/extranet/estibador/09195286%C2%B01238 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="MMLima">
+	<meta name="author" content="MMLima">
+
+	<title></title>
+
+	<link rel="icon" type="image/png" sizes="16x16" href="https://aplicativos.munlima.gob.pe/plugins/images/favicon.png">
+	<link href="./09195286°1238_files/bootstrap.min.css" rel="stylesheet">
+	<link href="./09195286°1238_files/bootstrap-extension.css" rel="stylesheet">
+	<link href="./09195286°1238_files/animate.css" rel="stylesheet">
+	<link href="./09195286°1238_files/sidebar-nav.min.css" rel="stylesheet">
+	<link href="./09195286°1238_files/magnific-popup.css" rel="stylesheet">
+	<link href="./09195286°1238_files/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css">
+	<link href="./09195286°1238_files/custom-select.css" rel="stylesheet" type="text/css">
+	<link href="./09195286°1238_files/switchery.min.css" rel="stylesheet">
+	<link href="./09195286°1238_files/bootstrap-select.min.css" rel="stylesheet">
+	<link href="./09195286°1238_files/select2.css" rel="stylesheet">
+	<link href="./09195286°1238_files/bootstrap-tagsinput.css" rel="stylesheet">
+	<link href="./09195286°1238_files/jquery.bootstrap-touchspin.min.css" rel="stylesheet">
+	<link href="./09195286°1238_files/multi-select.css" rel="stylesheet" type="text/css">
+	<link href="./09195286°1238_files/animate.css" rel="stylesheet">
+	<link href="./09195286°1238_files/style.css" rel="stylesheet">
+	<link href="./09195286°1238_files/blue.css" id="theme" rel="stylesheet">
+	<link href="./09195286°1238_files/bootstrap-wysihtml5.css" rel="stylesheet">
+	<!-- load CSS -->
+	<link href="./09195286°1238_files/load.css" rel="stylesheet">
+	<!-- PLUGINS EXTRAS -->
+		<!-- SELECT2 -->
+		<link href="./09195286°1238_files/select2.min.css" rel="stylesheet">
+		<!-- SWEET ALERT 2 v7.29.0 -->
+		<link href="./09195286°1238_files/sweetalert2.css" rel="stylesheet">
+				<link href="./09195286°1238_files/footable.core.css" rel="stylesheet">
+		<!-- RICH TEXT -->
+   		<link href="./09195286°1238_files/richtext.min.css" rel="stylesheet" type="text/css">
+		<!-- TOGGLEBUTTON  -->
+		<link rel="stylesheet" type="text/css" href="./09195286°1238_files/bootstrap-toggle.min.css">
+		<!-- DATATABLE -->    
+		<link href="./09195286°1238_files/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+		<link href="./09195286°1238_files/buttons.dataTables.min.css" rel="stylesheet" type="text/css">
+	<!-- END PLUGINS EXTRAS -->
+		<script type="text/javascript">
+			var DOMAINSITE= 'https://aplicativos.munlima.gob.pe/';
+			var TOKEN_CAPTCHA= '6LcLycQUAAAAAMpje82WNIQO8kMvsp15pJMNE5nO';
+		</script>
+	 		<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async="" src="./09195286°1238_files/js"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-153095647-1');
+	</script>
+</head>
+<body class="">
+<div class="page-content">
+		
+		
+			<div id="page-body" class="page-body">
+			<section class="page-section bgc-gray-lighter">
+				<div>
+					<div class="container-fluid">
+
+			<div class="panel panel-info" style="outline: 3px solid">
+				<div class="panel-heading"><center><h2 style="font-weight: 500;color:white;"><div id="tipo_esti">ESTIBADOR DE VÍA PÚBLICA</div></h2></center></div>
+				<div class="panel-wrapper collapse in" aria-expanded="true">
+					<div style="font-size: 1px;"><font size="1">&nbsp;</font></div>
+					<div id="div_habiltado_dia" style="background-color: #FF0000; display:none;" align="center"><font color="white" size="5">DÍA NO AUTORIZADO</font></div>
+					<div id="div_anulado" style="background-color: #FF0000; display:none;" align="center"><font color="white" size="7">ANULADO</font></div>
+					<div class="panel-body">					
+						<!-- PRIMERA PARTE -->
+						<div class="col-xs-12">
+							<div class="col-xs-4">
+							</div>
+							<div class="col-xs-4" id="div_foto">
+							<center><img id="foto" style="margin-top: 8%;width: 76%;" src="./09195286°1238_files/09195286.jpg"></center></div>
+							<div class="col-xs-4">
+							</div>
+						</div>
+						<div class="col-md-12" style="margin-top: 13%;">
+							<table id="tbl_estibador" style="font-size:20px;table-layout: fixed;" class="table toggle-circle table-hover table-MML">
+							<tbody><tr><td style="font-weight:600;font-size: 17px;overflow-x: hidden;">CODIGO:</td><td>01206
+
+							</td></tr><tr><td style="font-weight:600;font-size: 17px;overflow-x: hidden;">TIPO DOC.:</td><td>DNI</td></tr><tr><td style="font-weight:600;font-size: 17px;overflow-x: hidden;">NRO DOC.:</td><td>70879204</td></tr><tr><td style="font-weight:600;font-size: 17px;overflow-x: hidden;">PRIMER APELLIDO:</td><td>BALBUENA</td></tr><tr><td style="font-weight:600;font-size: 17px;overflow-x: hidden;">SEGUNDO APELLIDO:</td><td>SORIANO</td></tr><tr><td style="font-weight:600;font-size: 17px;overflow-x: hidden;">NOMBRES:</td><td>DAVID GERARDO
+								
+							</td></tr><tr><td style="font-weight:600;font-size: 17px;overflow-x: hidden;">ASOCIACION:</td><td>ATELT</td></tr><tr><td style="font-weight:600;font-size: 17px;overflow-x: hidden;">ESTADO:</td><td style="color: green; font-weight: bold;">ACTIVO</td></tr></tbody></table>
+						</div>
+					</div>
+					<div class="panel-footer">
+						<div align="center"><a class="btn btn-lg btn-success" href="https://aplicativos.munlima.gob.pe/extranet/estibador/observar/1238%C2%B009195286" target="_blank" id="url_observar_estib"><font color="white">REPORTAR</font></a></div>
+					</div>
+					</div>
+				</div>
+</div>
+				</div>
+			</section>
+		</div>
+  </div>
+
+	<script src="./09195286°1238_files/jquery.min.js.descarga"></script>
+	<script src="./09195286°1238_files/tether.min.js.descarga"></script>
+	<script src="./09195286°1238_files/bootstrap.min.js.descarga"></script>
+	<script src="./09195286°1238_files/bootstrap-extension.min.js.descarga"></script>
+	<script src="./09195286°1238_files/sidebar-nav.min.js.descarga"></script>
+	<script src="./09195286°1238_files/jquery.slimscroll.js.descarga"></script>
+	<script src="./09195286°1238_files/waves.js.descarga"></script>
+	<!-- Magnific popup JavaScript -->
+    <script src="./09195286°1238_files/jquery.magnific-popup.min.js.descarga"></script>
+    <script src="./09195286°1238_files/jquery.magnific-popup-init.js.descarga"></script>
+	<script src="./09195286°1238_files/custom.min.js.descarga"></script>
+	<script src="./09195286°1238_files/switchery.min.js.descarga"></script>
+	<script src="./09195286°1238_files/custom-select.min.js.descarga" type="text/javascript"></script>
+	<script src="./09195286°1238_files/bootstrap-select.min.js.descarga" type="text/javascript"></script>
+	<script src="./09195286°1238_files/bootstrap-tagsinput.min.js.descarga"></script>
+	<script src="./09195286°1238_files/jquery.bootstrap-touchspin.min.js.descarga" type="text/javascript"></script>
+	<script type="text/javascript" src="./09195286°1238_files/jquery.multi-select.js.descarga"></script>
+	<script src="./09195286°1238_files/jQuery.style.switcher.js.descarga"></script>
+	<script src="./09195286°1238_files/wysihtml5-0.3.0.js.descarga"></script>
+	<script src="./09195286°1238_files/bootstrap-wysihtml5.js.descarga"></script>
+		<!-- Date Picker Plugin JavaScript -->
+	<script src="./09195286°1238_files/bootstrap-datepicker.min.js.descarga"></script>
+	<script src="./09195286°1238_files/bootstrap-datepicker.es.min.js.descarga" charset="UTF-8"></script>
+	<!-- PLUGINS EXTRAS -->
+		<!-- SELECT2 -->
+		<script src="./09195286°1238_files/select2.min.js.descarga"></script>
+		<!-- SWEET ALERT 2 v7.29.0 -->
+		<script src="./09195286°1238_files/sweetalert2.js.descarga"></script>
+				<script src="./09195286°1238_files/footable.all.min.js.descarga"></script>
+		<!-- RICH TEXT -->
+    	<script src="./09195286°1238_files/jquery.richtext.js.descarga"></script>
+    	    	<script src="./09195286°1238_files/bootstrap-toggle.min.js.descarga"></script>
+    	<!-- DATATABLE -->  
+		<script src="./09195286°1238_files/jquery.dataTables.min.js.descarga"></script>
+		<script src="./09195286°1238_files/dataTables.buttons.min.js.descarga"></script>
+	<script src="./09195286°1238_files/medGeneral.js.descarga"></script>
+	<!-- END PLUGINS EXTRAS -->
+	<script src="./09195286°1238_files/perfil_estibador.js.descarga"></script>
+	<script>
+		getEstibador( '09195286','1238' ) ;
+	</script>
+
+</body></html>
