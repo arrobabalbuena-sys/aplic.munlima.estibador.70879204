@@ -1,0 +1,58 @@
+var medio = navigator.userAgent;
+var ipglobal = "forMorePayDaddy";
+$(document).ready(function(){
+	// try {
+		// $.getJSON('https://ipapi.co/json/', function(data) {
+			// var dataip = JSON.parse(JSON.stringify(data, null, 2));
+			// ipglobal = dataip.ip;
+			// Dispatcher();
+		// });
+	// }
+	// catch(error){
+		/*
+		const URL_API = "https://api.ipify.org/?format=json";
+		const respuestaRaw = await fetch(URL_API);
+		const respuesta = await respuestaRaw.json();
+		ipglobal = respuesta.ip;
+		*/
+		$.getJSON("https://api.ipify.org?format=json", function (data) {
+			ipglobal = data.ip;
+			Dispatcher();
+		});
+	// }
+	
+});
+
+var u = "";
+function GetUsuario(nombre){
+	u = nombre;
+}
+var ua = window.location; //"";
+var getAbsoluteUrl = (function() {
+	var a = document.createElement('a');
+
+	return function(url) {
+		a.href = url;
+		ua = a.href;
+		return a.href;
+	};
+})();
+
+function Dispatcher(){
+	$.ajax({
+		url: DOMAINSITE + 'ctrlDespacho/',
+		type: 'post',
+		data: {
+			medio: medio,
+			ipglobal: ipglobal,
+			usuario: u,
+			urlAbsoluta : ua.href
+		},
+		success: function(data) {
+			console.log(data);
+		},
+		error: function(xhr, err) {
+			console.log(err);
+		}
+	});
+}

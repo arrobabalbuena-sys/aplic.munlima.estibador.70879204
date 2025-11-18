@@ -1,0 +1,317 @@
+function getEstibador(nroDoc,idEstibador){
+
+	$.ajax({
+		url: 'getEstibador',
+		type: 'post',
+		data: {
+			nroDoc:nroDoc,
+			idEstibador:idEstibador
+		},
+		beforeSend: function (e) {
+			$('#load').addClass('load');
+		},
+		success: function (data) {
+			var c = JSON.parse(data);
+			//console.log(c);
+			if(c.success){
+				if(c.Estibador.success){
+					var i = c.Estibador.data[0];
+					//console.log(i);
+					if(c.habilitado_dia==0&&i.ESTIBADOR_ESTADO==1){$('#div_habiltado_dia').show(); }
+					if(i.ESTIBADOR_ESTADO==2){$('#div_anulado').show(); }
+					
+					var estado ='Sin Estado';
+					if( i.ESTIBADOR_ESTADO==1 ){
+						estado='<td style="color: green; font-weight: bold;">ACTIVO</td>';
+						switch (i.ESTADO_TRABAJO) {
+						  	case 1:
+								trabajo='<tr>'+
+										  '<td style="font-weight:600;font-size: 17px;overflow-x: hidden;">ESTADO TRABAJO:</td>'+
+										  '<td style="color: red; font-weight: bold;">NO AUTORIZADO</td>'+
+										'</tr>';
+						   	break;
+						   	case 2:
+								trabajo='<tr>'+
+										  '<td style="font-weight:600;font-size: 17px;overflow-x: hidden;">ESTADO TRABAJO:</td>'+
+										  '<td style="color: green; font-weight: bold;">AUTORIZADO</td>'+
+										'</tr>';
+						   	break;
+						  	default:
+						    	trabajo='';
+						}
+					}else{
+						estado='<td style="color: red; font-weight: bold;">INACTIVO</td>';
+						trabajo='';
+					}
+					$('#foto').remove();
+					$('#url_observar_estib').attr('href','/extranet/estibador/observar/'+i.ID_ESTIBADOR+'°'+i.NRODOCUMENTO);
+					// $('#div_foto').append('<center><img id="foto" style="margin-top: 8%;width: 76%;" src="'+DOMAINSITE+i.RUTAARCHIVO+'"></center>');
+					$('#div_foto').append('<center><img id="foto" style="margin-top: 8%;width: 76%;" src="/'+i.RUTAARCHIVO+'"></center>');
+					$('#tbl_estibador tbody').remove();
+					$('#tbl_estibador').append("<tbody>");
+					if(i.TIPO_ESTIBADOR=='INTERNO'){
+						
+						$('#tipo_esti').append("ESTIBADOR DE COMERCIO AUTORIZADO");
+
+						$('#tbl_estibador tbody').append(
+						'<tr>'+
+					   		'<td style="font-weight:600;font-size: 17px;overflow-x: hidden;">CODIGO:</td>'+
+					   		'<td>'+i.CODIGO+'</td>'+
+						'</tr>'+
+						'<tr>'+
+						   '<td style="font-weight:600;font-size: 17px;overflow-x: hidden;">TIPO DOC.:</td>'+
+						   '<td>'+i.TIPODOCUMENTO_NOMBRE+'</td>'+
+						'</tr>'+
+						'<tr>'+
+						  '<td style="font-weight:600;font-size: 17px;overflow-x: hidden;">NRO DOC.:</td>'+
+						  '<td>'+i.NRODOCUMENTO+'</td>'+
+						'</tr>'+
+						'<tr>'+
+						  '<td style="font-weight:600;font-size: 17px;overflow-x: hidden;">PRIMER APELLIDO:</td>'+
+						  '<td>'+i.APELLIDO_PATERNO+'</td>'+
+						'</tr>'+
+						'<tr>'+
+						  '<td style="font-weight:600;font-size: 17px;overflow-x: hidden;">SEGUNDO APELLIDO:</td>'+
+						  '<td>'+(i.APELLIDO_MATERNO ?? '')+'</td>'+
+						'</tr>'+
+						'<tr>'+
+						  '<td style="font-weight:600;font-size: 17px;overflow-x: hidden;">NOMBRES:</td>'+
+						  '<td>'+i.NOMBRES+'</td>'+
+						'</tr>'+
+						//'<tr>'+
+						//  '<td style="font-weight:600;font-size: 17px;overflow-x: hidden;">FECHA DE NACIMIENTO:</td>'+
+						//  '<td>'+i.FECHA_NACIMIENTO_FORMAT+'</td>'+
+						//'</tr>'+
+						// '<tr>'+
+						//   '<td style="font-weight:600;font-size: 17px;overflow-x: hidden;">TIPO:</td>'+
+						//   '<td>'+i.TIPO_ESTIBADOR+'</td>'+
+						// '</tr>'+
+						'<tr>'+
+						  '<td style="font-weight:600;font-size: 17px;overflow-x: hidden;">RUC:</td>'+
+						  '<td>'+i.RUC+'</td>'+
+						'</tr>'+
+						'<tr>'+
+						  '<td style="font-weight:600;font-size: 17px;overflow-x: hidden;">RAZON SOCIAL:</td>'+
+						  '<td>'+i.RAZON_SOCIAL+'</td>'+
+						'</tr>'+
+						'<tr>'+
+						  '<td style="font-weight:600;font-size: 17px;overflow-x: hidden;">DIRECCION:</td>'+
+						  '<td>'+i.DIRECCION+'</td>'+
+						'</tr>'+
+						'<tr>'+
+						  '<td style="font-weight:600;font-size: 17px;overflow-x: hidden;">ESTADO:</td>'+
+						  estado+
+						'</tr>'+
+						  trabajo);
+
+					}else{
+						if (i.TIPO_ESTIBADOR == 'EXTERNO') {
+							$('#tipo_esti').append("ESTIBADOR DE VÍA PÚBLICA");
+						} else {
+							$('#tipo_esti').append("ESTIBADOR DE PROVEEDOR AUTORIZADO");
+						}
+
+					$('#tbl_estibador tbody').append(
+						'<tr>'+
+					   		'<td style="font-weight:600;font-size: 17px;overflow-x: hidden;">CODIGO:</td>'+
+					   		'<td>'+i.CODIGO+'</td>'+
+						'</tr>'+
+						'<tr>'+
+						   '<td style="font-weight:600;font-size: 17px;overflow-x: hidden;">TIPO DOC.:</td>'+
+						   '<td>'+i.TIPODOCUMENTO_NOMBRE+'</td>'+
+						'</tr>'+
+						'<tr>'+
+						  '<td style="font-weight:600;font-size: 17px;overflow-x: hidden;">NRO DOC.:</td>'+
+						  '<td>'+i.NRODOCUMENTO+'</td>'+
+						'</tr>'+
+						'<tr>'+
+						  '<td style="font-weight:600;font-size: 17px;overflow-x: hidden;">PRIMER APELLIDO:</td>'+
+						  '<td>'+i.APELLIDO_PATERNO+'</td>'+
+						'</tr>'+
+						'<tr>'+
+						  '<td style="font-weight:600;font-size: 17px;overflow-x: hidden;">SEGUNDO APELLIDO:</td>'+
+						  '<td>'+(i.APELLIDO_MATERNO ?? '')+'</td>'+
+						'</tr>'+
+						'<tr>'+
+						  '<td style="font-weight:600;font-size: 17px;overflow-x: hidden;">NOMBRES:</td>'+
+						  '<td>'+i.NOMBRES+'</td>'+
+						'</tr>'+
+						//'<tr>'+
+						//  '<td style="font-weight:600;font-size: 17px;overflow-x: hidden;">FECHA DE NACIMIENTO:</td>'+
+						//  '<td>'+i.FECHA_NACIMIENTO_FORMAT+'</td>'+
+						//'</tr>'+
+						// '<tr>'+
+						//   '<td style="font-weight:600;font-size: 17px;overflow-x: hidden;">TIPO:</td>'+
+						//   '<td>'+i.TIPO_ESTIBADOR+'</td>'+
+						// '</tr>'+
+						// '<tr>'+
+						  '<td style="font-weight:600;font-size: 17px;overflow-x: hidden;">ASOCIACION:</td>'+
+						  '<td>'+(i.ASOCIACION ?? '')+'</td>'+
+						'</tr>'+
+						'<tr>'+
+						  '<td style="font-weight:600;font-size: 17px;overflow-x: hidden;">ESTADO:</td>'+
+						  estado+
+						'</tr>'+
+						  trabajo);}
+					$('#tbl_estibador').append('</tbody>');
+				}else{
+
+				}
+			}else{
+
+			}
+
+			$('#load').removeClass('load');
+		},
+		error: function () {
+			$('#load').removeClass('load');
+		}
+	});
+
+}
+
+function CrearObservacion(){
+event.preventDefault();
+if($('#cbo_tip_obs').val() == ''){
+			swal({
+				title: "ADVERTENCIA",
+				text: "Registro sin MOTIVO",
+				type: "warning",
+				showCancelButton: false,
+				confirmButtonColor: "#3085d6",
+				confirmButtonText: "Aceptar",
+				footer: '<b><i>Debe seleccionar un MOTIVO de la lista desplegable.</i></b>'
+			});
+		} 	else{
+				 Swal.fire({
+				              title: "Registrar",
+						      text: '¿Desea registrar la observación?',
+						      type: 'warning',
+						      showCancelButton: true,
+						      confirmButtonColor: '#3085d6',
+						      cancelButtonColor: '#d33',
+						      confirmButtonText: "Si",
+						      //timer: 100000
+				            }).then((result) => { 
+				            	if (result.value) {
+				            		var formData = new FormData($('#NewObservacion')[0]);
+									  	$.ajax({
+									      
+										type:'POST',
+										url:DOMAINSITE+'extranet/estibador/registrarobs',            
+										async: false,
+										contentType: false,
+										enctype: 'multipart/form-data',
+										processData: false,
+										data: formData,
+										beforeSend: function(e){
+										//$('#load').addClass('load');
+										},
+										success: function(data){
+
+										//console.log(data);
+										//$('#load').removeClass('load');
+										var c = JSON.parse(data); 
+										// console.log(c);
+
+										if (c.estado == false) { console.log("no se grabo");}
+
+										if (c.estado == true) { 
+										  // console.log("se creo");
+										         Swal.fire({
+										          type: 'success',
+										          title: 'Exito',
+										          text: "Se Registro satisfactoriamente!",
+										          footer: '',              
+										          showCancelButton: false,
+										          showConfirmButton: false,
+										          confirmButtonColor: '#3085d6',
+										          cancelButtonColor: '#d33',
+										          cancelButtonText: 'cerrar',
+										          confirmButtonText: 'Ok',
+										          timer: 2000
+										        }).then((result) => {   
+										          window.close();
+										        }) 
+
+										}                                      
+
+										},
+										error: function(){      
+										
+										}
+									  	});
+								  }
+					}) 
+        }
+  
+}
+function cambiarPass(){
+	var pass   = $('#pass').val().trim();
+	var repass = $('#repass').val().trim();
+
+	if (pass == "" || repass == "") {
+		swal({
+			title: "ERROR",
+			text: "No pueden haber campos vacíos.",
+			type: "error",
+			showCancelButton: false,
+			confirmButtonColor: "#3085d6",
+			confirmButtonText: "Aceptar",
+		});
+	} else{
+		if (pass === repass) {
+			$.ajax({
+				url: DOMAINSITE+'cambiarPass',
+				type:'post',
+				data: {
+					tipo : "generico",
+					pass : pass
+				},
+				beforeSend: function(e){
+					$('#load').addClass('load');
+				},
+				success: function(data){
+					var c = JSON.parse(data);
+					if (c.estado) {
+						swal({
+							title: 'OK',
+							text: c.mensaje,
+							type: 'success',
+							showCancelButton: false,
+							confirmButtonColor: '#3085d6',
+							confirmButtonText: 'Aceptar',
+							footer: '<b><i><center>Recuerde: la siguiente vez al iniciar, ingrese su nueva clave!</center></i></b>'
+						}).then((result) => {
+							if (result.value) {
+								window.close();
+							}
+						});
+					} else{
+						swal({
+							title: "ERROR",
+							text: c.mensaje,
+							type: "error",
+							showCancelButton: false,
+							confirmButtonColor: "#3085d6",
+							confirmButtonText: "Aceptar",
+							footer: '<b><i>Intente nuevamente. Si el error persiste, contáctese con el Administrador del Sistema.</i></b>'
+						});
+					}
+				},
+				error: function(){
+					$('#load').addClass('load');
+				}
+			});
+		} else{
+			swal({
+				title: "ERROR",
+				text: "Las contraseñas no coinciden.",
+				type: "error",
+				showCancelButton: false,
+				confirmButtonColor: "#3085d6",
+				confirmButtonText: "Aceptar",
+			});
+		}
+	}
+}

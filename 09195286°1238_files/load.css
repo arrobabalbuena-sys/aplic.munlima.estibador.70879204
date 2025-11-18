@@ -1,0 +1,85 @@
+.load {
+    position: fixed;
+    text-align: center;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('/assets/images/gif/loadingtable.gif') 50% 50% no-repeat rgb(0,0,1);
+    opacity: .8;
+}
+
+.cargando {
+    position: fixed;
+    text-align: center;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('/assets/images/gif/cargando.gif') 50% 50% no-repeat rgb(0,0,1);
+    opacity: .8;
+}
+
+.pop_up_bloqueado {
+    position: fixed;
+    text-align: center;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('/assets/images/pop-up/pop_up_bloqueado.JPG') 50% 50% no-repeat rgb(0,0,1);
+    /*opacity: .8;*/
+}
+
+.pagina_bloqueado {
+    position: fixed;
+    text-align: center;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('/assets/images/banner/pagina_bloqueada.JPG') 50% 50% no-repeat rgb(0,0,1);
+    /*opacity: .8;*/
+}
+
+.bloquear {
+    position: fixed;
+    text-align: center;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: rgb(0,0,1);
+    opacity: .8;
+}
+
+.table-extranet thead {
+    width: 100%;
+}
+.table-extranet thead {
+    background: #00A7A0
+}
+.table-extranet thead>tr>th {
+    vertical-align: middle;
+    background-color: white !important;
+    text-align: center;
+}
+.table-extranet tbody>tr>th {
+    vertical-align: middle;
+    background-color: white !important;
+    text-align: center;
+}
+.table-extranet tbody>tr>td {
+    vertical-align: middle;
+    background-color: white !important;
+    text-align: center;
+}
+
+.redondear_bordes{
+    border-radius: 15px;
+}
